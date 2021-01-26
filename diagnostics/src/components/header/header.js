@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import "./header.css";
 import Hamburger from 'hamburger-react'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [click, setClick] = useState(false);
-  const closeMobileMenu = () => setClick(false);
+  
+  //constants helps you to apply styles for mobile layout and controls the opand an close layout for hamburger
+  const [navOption, setNavOptions] = useState(false);
+  const closeMobileMenu = () => setNavOptions(false);
 
+  //generate header with navigation bar including home and history tabs along with mobile layou hamburger menu
   return (
     <div className="header">
       <div className="logo-nav">
@@ -19,15 +18,15 @@ export default function Header() {
             <Link to="/"><img src={logo} className="logo" alt="logo" onClick={closeMobileMenu}/> </Link>
         </div>
       </div>
-      <ul className={click ? "nav-options active" : "nav-options"}>
-        <li className="sign-in" onClick={closeMobileMenu}>
+      <ul className={navOption ? "nav-options active" : "nav-options"}>
+        <li className="nav-list" onClick={closeMobileMenu}>
           <Link to="/">Home </Link>
         </li>
-        <li className="sign-in" onClick={closeMobileMenu}>
+        <li className="nav-list" onClick={closeMobileMenu}>
           <Link to="/history">History </Link>
         </li>
-      </ul>
-      <Hamburger toggled={click} toggle={setClick} />
+          </ul>
+      <Hamburger toggled={navOption} toggle={setNavOptions} />
     </div>
   );
 }

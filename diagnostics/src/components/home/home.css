@@ -1,9 +1,14 @@
+.testRuns{
+    padding-top:80px;
+
+}
 .card{
-    margin: 20px auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 30px; /* Added */
+    margin: 20px auto;
+    float: none;
+    margin-bottom: 30px;
     width: 30%;
     cursor: pointer;
+    background-color:#334f6b;
 }
 
 .card span{
@@ -12,8 +17,8 @@
     text-transform: capitalize;
 }
 
-.bg-secondary :hover{
-    background-color:lightcoral;
+.card :hover{
+    background-color:#327892;
 }
 
 @media (max-width: 648px) {
