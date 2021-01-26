@@ -1,0 +1,23 @@
+.card{
+    margin: 20px auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 30px; /* Added */
+    width: 30%;
+    cursor: pointer;
+}
+
+.card span{
+    font-weight:bolder;
+    font-size:x-large;
+    text-transform: capitalize;
+}
+
+.bg-secondary :hover{
+    background-color:lightcoral;
+}
+
+@media (max-width: 648px) {
+    .card {
+        width:90%;
+    }
+}
