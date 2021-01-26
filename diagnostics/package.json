@@ -9,11 +9,12 @@
     "bootstrap": "^4.6.0",
     "hamburger-react": "^2.4.0",
     "local-storage": "^2.0.0",
+    "msw": "^0.26.0",
     "react": "17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
+    "react-scripts": "3.0.1",
     "react-super-responsive-table": "^5.2.0",
     "web-vitals": "0.2.4"
   },
@@ -40,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "react-test-renderer": "^17.0.1"
   }
 }

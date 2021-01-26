@@ -1,36 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 import './home.css';
 
 export default function Home() { 
-    const [loaded, setLoaded] = useState(false);
-    const [data, setData] = useState({ tests: [] });
+    const [primaryReportsData, setPrimaryReportsData] = useState({ tests: [] });
     const history = useHistory(); 
 
     useEffect(() => {
-        let isSubscribed = true;
+            //we fetch the collection of total tests available and set in state
             fetch("http://localhost:8001/api/v1/diagnostics/tests")
             .then(response => response.json())
             .then(data => {
-                setData(data);
-                setLoaded(true);
-                console.log("data", data);
+                setPrimaryReportsData(data);
             });
-            return () => (isSubscribed = false)
     }, []);
 
-    function navigateTo(testreport) { 
-        return history.push('/testreport',testreport);
+    //navigateTo helps to redirect to secondary testreport of the selected test
+    function navigateTo(primarytest) { 
+        return history.push('/testreport',primarytest);
     }
 
+    //check the data records from the service and generate layout based on total primary tests
     return (
-        <div>
-            {data && data.tests.map(test => { 
+        <div className="testRuns">
+            {primaryReportsData && primaryReportsData.tests.map(primarytest => { 
                 return (
-                    <>
-                        <Card bg="secondary" text="white" className="text-center card" body onClick={ () => navigateTo(test)}><span>{test.category}</span></Card>
-                    </>
+                    <Card text="white" className="text-center card" body onClick={() => navigateTo(primarytest)}>
+                        <span>{primarytest.category}</span>
+                    </Card>
                 );
             })}
         </div>
