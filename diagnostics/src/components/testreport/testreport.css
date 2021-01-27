@@ -9,7 +9,7 @@
     border-spacing: 0;
     
   }
-  @media screen and (max-width: 40em) {
+  @media screen and (max-width: 650px) {
     .responsiveTable {
         width: 90%;
       }
