@@ -1,6 +1,6 @@
-# Frontend Developer Home Assignment
+# Frontend diagnostics app
 
-You are tasked to create a user interface for a diagnostics app.
+create a user interface for a diagnostics app.
 
 >The application fetches a collection of tests from the backend and performs calls to the backend API to execute the individual tests.
 >
